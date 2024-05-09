@@ -91,3 +91,46 @@ This is a modular based approch to client sever architecture that splits the app
 # MVT Architecture
 
 Django organizes a project using Models, Views, Templates commonly known a MVT Arcitecture.
+
+# URL Configuration
+
+- **URL's for app's:-** To design URL's for app we create a python module called URL conf or URL configuration.
+  The URL Confs used by View functions are created and updated in the urls.py file. `Django by default creates a urls.py at the project level, additinally it is best practice to create a urls.py file in app level.`This way the respective URL's for an app are clustered but the project also needs to know what urls are used inside each app.
+
+- **For example:** WHen a user make a request for a URL this request is first handled by the urls.py at project level and the Django looks for the variable URL patterns. However the code that contains the logic for URL mapping is at the app level. So we need a way to tell Django to look at the urls.py at the app level.
+  ![alt text](image-17.png)
+
+### include()
+
+In the urls.py in project level we create new path inside the URL Patterns list, then inside the path function we pass the reference to the urls.py in the app level as view argument. This allows the project level to access the app level urls. By using `include()` the project level urls.py can inherit the app level urls.py
+
+# HTTP Requests nd Response in Django
+
+- Inside our views.py file import `HttpResponse` using from `django.http import HttpResponse`
+- Now we can create our views.
+
+# Mapping URLs with Params
+
+- Previously we used path function and then URL is mapped to a View function. Sometimes devs needs to pass some information to view function for additional processing.
+- Django has option to pass values as URL Parameters.
+- We can capture a value from a URL using
+
+```
+urlpatterns = [
+    path('drinks/<str:name>',views.drinks,name = "drinks")
+    ]
+```
+
+- Here in this we capture params in `<str:name>`
+- Now in views.py we can use this captured value by defining name as argument in our view function.
+
+```
+def drinks(request,name):
+    query = name
+    return HttpResponse("<h1>%s</h1>" %query)
+```
+
+# RegEx
+
+We can verify the values passed to the view function are correct using RegEx or regular expressions.
+In Django devs use RegEx to define, Extract and validate Dynamic URLs paths before they are sent associated view function.
