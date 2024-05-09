@@ -3,7 +3,7 @@
 - Django is a Web-Application Framework written in python.
 - The Django Framework allows easy integration with many tools and languages.
 - Django provides Templates, Libraries, APIs which are easily manageable and scalable.
-- Developers can create Backend with Django and connect with any other frontend framework like (React, React Native,....). ![alt text](image-1.png).
+- Developers can create Backend with Django and connect with any other frontend framework like (React, React Native,....). ![alt text](images/image-1.png).
 - Backend Developers can use multiple tools like Email Notifications, Data analysys Tools, Admin Dashboard, Development tools.
 
 ### Advantages of Django
@@ -16,33 +16,33 @@
 ## Projects and Overview
 
 Using a Framework Developers can focus mainly on creating functionalities unique to the projects instead of repeating the coding tasks associated with building a web application.
-![alt text](image.png)
+![alt text](images/image.png)
 
 ## Internet Protocols
 
 - Every action is tied into a HTTP Request pointing to some URL
 - **HTTP Request :-** HTTP is used to get send and render web components.
-  ![alt text](image-2.png)
-  ![alt text](image-4.png)
-  ![alt text](image-6.png)
-  ![alt text](image-3.png)
+  ![alt text](images/image-2.png)
+  ![alt text](images/image-4.png)
+  ![alt text](images/image-6.png)
+  ![alt text](images/image-3.png)
 
 # Django Web application
 
-- **Project:-** In Django a project represents the entire web application.![alt text](image-7.png)
-- **App:-** App is the sub module of Project. It is typically used to implement funtionalityfor some specific purposes.![alt text](image-8.png) Apps can be self-contained meaning they do not rely on other apps to function as a result tey can be used and reused in may different projects.![alt text](image-9.png)
+- **Project:-** In Django a project represents the entire web application.![alt text](images/image-7.png)
+- **App:-** App is the sub module of Project. It is typically used to implement funtionalityfor some specific purposes.![alt text](images/image-8.png) Apps can be self-contained meaning they do not rely on other apps to function as a result tey can be used and reused in may different projects.![alt text](images/image-9.png)
 
 # Structure of Django Project
 
 Django provides a set of commands that auto generates project structure that contains project configuration and settings related to the entire web application.
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 # Creating first Django Project
 
 Django Projects can often be quite large and involve specific dependencies for things like packages. For example you could have a package that has a dependency on a specific version and you donot want this conflicting with your other python and django projects so it's best to keep your projects isolated using a virtual development environmet(venv).
 
-**virtual environment(VENV):-** virtual environments are isolated spaces you create to manage dependencies and the overall project. This allows the interpreter libraries and scripts isolated and installed for a specific project.![alt text](image-11.png)
-In addition to the functionalities provided Django also comes with an integrated development server this means that the application has a request response relationship with a client.![alt text](image-12.png)
+**virtual environment(VENV):-** virtual environments are isolated spaces you create to manage dependencies and the overall project. This allows the interpreter libraries and scripts isolated and installed for a specific project.![alt text](images/image-11.png)
+In addition to the functionalities provided Django also comes with an integrated development server this means that the application has a request response relationship with a client.![alt text](images/image-12.png)
 
 ## Creating our first Django Application
 
@@ -50,12 +50,12 @@ In addition to the functionalities provided Django also comes with an integrated
 - Now get into that folder and use `python -m venv first-env` in terminal.
 - Now, notice that some new files have been generated in our projects folder.
 - Now we have to activate the environment we created. Type `first-env/Scripts/activate` to activate environment.
-  ![alt text](image-13.png)
+  ![alt text](images/image-13.png)
 - Now install Django using `pip install django`. To check if django is installed or not use `python -m django version`.
 - To create the project we use Django's build-in command `django-admin startproject firstProject`. This will create a new folder with the given name of the project and Django specific supported files.
 - Notice there is a file `manage.py` inside our project folder which is the command line utility that works like the Django admin command.
 - Now get into out project folder using `cd firstProject` and use `python manage.py runserver` to start the server.
-  ![alt text](image-14.png)
+  ![alt text](images/image-14.png)
   open the link provided.
 
 ## Creating an app inside our firstProject
@@ -72,7 +72,7 @@ In addition to the functionalities provided Django also comes with an integrated
 
 Python functions that generate the content that makes up web page. They can recieve a request and return a response.
 
-- Now lets create a view in our app. ![alt text](image-15.png)
+- Now lets create a view in our app. ![alt text](images/image-15.png)
   To make this work we need to map the view function to a `URL` we use in our Django project. URL's we use in the project are stored as `URL Configuration` also known as `URL conf` in the file called `urls.py` which is located in the project Directory.
   **URL Configuration:-** It acts as a maping chart that Django uses to determine which view functions are associated with a specific URL.
 - First I import the views file in the URL Config file and next we need to add a file path to the list.
@@ -86,7 +86,7 @@ This is a modular based approch to client sever architecture that splits the app
 - Presentation Tier
 - Application Tier
 - Data Tier
-  ![alt text](image-16.png)
+  ![alt text](images/image-16.png)
 
 # MVT Architecture
 
@@ -98,7 +98,7 @@ Django organizes a project using Models, Views, Templates commonly known a MVT A
   The URL Confs used by View functions are created and updated in the urls.py file. `Django by default creates a urls.py at the project level, additinally it is best practice to create a urls.py file in app level.`This way the respective URL's for an app are clustered but the project also needs to know what urls are used inside each app.
 
 - **For example:** WHen a user make a request for a URL this request is first handled by the urls.py at project level and the Django looks for the variable URL patterns. However the code that contains the logic for URL mapping is at the app level. So we need a way to tell Django to look at the urls.py at the app level.
-  ![alt text](image-17.png)
+  ![alt text](images/image-17.png)
 
 ### include()
 
